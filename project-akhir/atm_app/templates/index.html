@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+    <title>ATM System</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>ATM System</h1>
+      <h2>Current Balance: ${{ balance }}</h2>
+      <form action="/store" method="POST">
+        <input
+          type="number"
+          name="amount"
+          placeholder="Amount to Store"
+          required
+        />
+        <button type="submit">Store Money</button>
+      </form>
+      <form action="/claim" method="POST">
+        <input
+          type="number"
+          name="amount"
+          placeholder="Amount to Claim"
+          required
+        />
+        <button type="submit">Claim Money</button>
+      </form>
+      <a href="/transactions">View Transaction History</a>
+    </div>
+  </body>
+</html>
